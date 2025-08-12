@@ -40,8 +40,8 @@ def parse_args(argv: Optional[List[str]] = None) -> CliArgs:
     """
     parser = argparse.ArgumentParser(
         description=(
-            "Export 'Not Voting' roll call votes for a specific House member "
-            "in a given two-year Congress term."
+            "Export all House roll call votes (Yea, Nay, Not Voting, etc.) for a "
+            "specific member in a given two-year Congress term. Writes a CSV to outputs/."
         )
     )
     parser.add_argument("--first", required=True, help="Member first name")
@@ -53,12 +53,12 @@ def parse_args(argv: Optional[List[str]] = None) -> CliArgs:
         "--session",
         type=int,
         choices=[1, 2],
-        help="Session year (1 or 2) when using --rollcall",
+        help="Session year (1 or 2). Only used together with --rollcall; otherwise the entire Congress is processed.",
     )
     parser.add_argument(
         "--rollcall",
         type=int,
-        help="Roll call number to fetch a single vote (requires --session)",
+        help="Roll call number to export a single vote. Requires --session.",
     )
     ns = parser.parse_args(argv)
     return CliArgs(

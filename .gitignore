@@ -69,3 +69,5 @@ outputs/
 # Local assistant/AI artifacts
 Claude.md
 .cursor/rules/
+CLAUDE.md
+claude.md

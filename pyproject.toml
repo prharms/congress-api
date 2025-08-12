@@ -27,3 +27,16 @@ markers = [
 ]
 
 
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+include = ["congress_api*"]
+exclude = [
+  "tests*",
+  "outputs*",
+  "examples*",
+  "scripts*",
+]
+
+
